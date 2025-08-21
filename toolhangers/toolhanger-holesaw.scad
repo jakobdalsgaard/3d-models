@@ -13,15 +13,17 @@ rotate([90, 0, 0]) {
    }
 
 
+
+translate([0, 0, 5]) 
 difference () {
-  
+  union () {
   translate([0, 3, 0]) cube([80, 40, 10]);
-  
-  
-  translate([79-20-4, 5, -1]) cube([14, 39, 6]);
-  translate([91-20-4, 5, -1]) cylinder(6, r=2);
-  translate([81-20-4, 5, -1]) cylinder(6, r=2);
-  translate([81-20-4, 3, -1]) cube([10,2,6]);
+  translate([0, 0, -5]) rotate([90, 0, 90]) linear_extrude(height=80) polygon([[0,0], [40,5], [0,5]]);
+  }
+  translate([79-20-4, 5, -5]) cube([14, 39, 10]);
+  translate([91-20-4, 5, -5]) cylinder(10, r=2);
+  translate([81-20-4, 5, -5]) cylinder(10, r=2);
+  translate([81-20-4, 3, -5]) cube([10,2,16]);
 
 
   translate([80-20-8, 5, 5]) cube([20, 39, 6]);
@@ -31,10 +33,10 @@ difference () {
 
 
   
-  translate([40-21-4, 5, -1]) cube([20, 39, 6]);
-  translate([57-20-4, 5, -1]) cylinder(6, r=2);
-  translate([41-20-4, 5, -1]) cylinder(6, r=2);
-  translate([41-20-4, 3, -1]) cube([16,2,6]);
+  translate([40-21-4, 5, -5]) cube([20, 39, 10]);
+  translate([57-20-4, 5, -5]) cylinder(14, r=2);
+  translate([41-20-4, 5, -5]) cylinder(14, r=2);
+  translate([41-20-4, 3, -5]) cube([16,2,10]);
 
 
   translate([40-21-12, 5, 5]) cube([36, 39, 6]);
